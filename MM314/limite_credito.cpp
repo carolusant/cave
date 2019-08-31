@@ -1,6 +1,5 @@
-// Ejercicio 
 // aumentar limite de credito dependiendo del tipo de tarjeta que el cliente posea 
-// Carlos'Gonzalez
+// Carlos'Gz
 #include <iostream>
 using namespace std;
 int tt; //tipo de tarjeta
