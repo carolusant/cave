@@ -3,14 +3,6 @@
 //#include<cstdlib>
 using namespace std;
 
-
-/*
-
-----------------------------TAREA 04 -----------------------------------------
-
-----------------------------Carlos Gz-----------------------------------------
-----------------------------Nov 11 -----------------------------------------
-*/
 class CuentaBancaria{
 private:
 	double saldoInicial;
@@ -23,13 +15,13 @@ public:
 	double creditos;
 	double saldoTotal;
 
-	//Constructor para inicializar atributos automatic. al crear cada objeto 
+	
 	CuentaBancaria(){
 		initAtributos();
 
 	}
 
-	//Funciones
+	
 	void initAtributos (){
 		saldoInicial =0;
 		debitos=0;
@@ -47,20 +39,20 @@ public:
 			saldoInicial=monto;
 	}
 
-	//Funcion para pedir datos al usuario
+	
 	void pedirDatos(){
 	cout<<"Numero de cuenta:  ";
 	cin>> numeroCuenta;
 	cout<<"Nombre del propietario:  ";
-	cin.ignore(100 ,'\n'); // ignorar los 100 bytes guardados anteriormente y todos los saltos de line
-	getline(cin, propietario); // getline vs inline??
+	cin.ignore(100 ,'\n');
+	getline(cin, propietario); 
 	cout<<"Saldo inicial:  ";
 	cin>> saldoInicial;
 	}
 
 
 	
-	//Funcion depositar
+	
 	void depositar(){
 		double deposito=0; 
 		const int MAX_DEPOSITO = 200000;
@@ -86,7 +78,7 @@ public:
 
 	}
 
-	//Funcion retirar 
+	
 	void retirar(){
 		double retiro=0; 
 		const int LIMITE_RETIRO= 30000;
@@ -119,7 +111,7 @@ public:
 		
 	}
 
-	// funcion para mostrar datos
+	
 	void mostarCuenta(){
 	cout<< "-------------------------Estado de cuenta -----------------------------"<<endl
 		<< "Titular de la cuenta:  "<<  propietario <<endl
@@ -132,17 +124,16 @@ public:
 		system("pause");
 	}
 
-	//fucion calcular saldo
+	
 	double calcularSaldo () {
 		
 		return saldoInicial+creditos-debitos;
 	}
 
-	
- /// 
+
 	
 
-}; //fin de clase
+}; 
 
 
 
@@ -229,20 +220,7 @@ class Banco{
 		}
 
 
-		/*void mostrarEstado(){
-			int numCuenta;
-			cout<<"Digite su numero de cuenta"<<endl;
-			cin>>numCuenta;
-			int index = buscarCuenta(numCuenta);
-
-			if (index == NO_EXISTE_CUENTA ){
-				cout<<"****ERROR! -02-	No existe cuenta la indicada "<<endl;
-				system("PAUSE");
-			}
-			else{
-				cuentas[index].mostarCuenta();
-				}
-		}*/
+	
 		
 
 
@@ -354,7 +332,7 @@ class Banco{
 
 
 
-				//outside funct
+				
 				}
 
 		}
@@ -367,8 +345,6 @@ int main(){
 
 Banco bac;
 int opcion;
-
-//enum function?????
 enum OPCIONES {APERTURA=1, DEPOSITO, RETIRO, TRANSFERENCIA, ESTADO_CUENTA, SALIR};
 
 
@@ -407,8 +383,7 @@ do{
 				cout<<"--------------------------\n"<<endl
 					<<"Gracias por su preferencia"<<endl
 					<<"\n--------Banco ABC---------\n"<<endl;
-				//system("pause");
-				//return 0;
+				
 			break;
 		default:
 
