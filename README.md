@@ -1,2 +1,2 @@
-###Simple and basic algorithms for beginners. 
+### Simple and basic algorithms for beginners. 
   
