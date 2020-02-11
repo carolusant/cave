@@ -1,9 +1,9 @@
-/**********************************************************************************************************************
-*	Lista simplemente enlazada 
-*   
+﻿/**********************************************************************************************************************
+*	
+* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310  
+* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310 
+* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310 
 *
-*
-*->Carolusant
 ***********************************************************************************************************************/
 
 
@@ -53,8 +53,8 @@ public:
 
 	}
 
-
-//funcion para mostrar nodos existentes
+// TAREA 02  
+//agruegar funcion para mostrar nodos existentes
 	void mostrasDatos(){
 		Nodo *temp =new Nodo; // crear un nodo temporal para navegar por la lista 
 		temp= primero; // ese nodo temporal sera inicialmente la cabeza de la lista
@@ -64,15 +64,43 @@ public:
 		else{
 			int contador= 1;
 			while(temp){ // mientras el nodo temp sea distinto de cero/NULL
-				//cout<<temp->datos<<endl; // muestra datos
+				cout<<temp->datos<<endl; // muestra datos
 				// para ver las direcciones y los datos 
-				cout<<"|| Datos del Nodo #"<<contador<<" : " <<temp->datos<< " |-> Direccion del Nodo: " <<temp << " |-> Direccion del enlace: "<<temp->siguiente<<" ||"<<endl;
+				//cout<<"|| Datos del Nodo #"<<contador<<" : " <<temp->datos<< " |-> Direccion del Nodo: " <<temp << " |-> Direccion del enlace: "<<temp->siguiente<<" ||"<<endl;
 				temp= temp->siguiente; // cambia temp al siguiente nodo y sigue el ciclo hasta lleguar a la cola
 				contador++;
 			}
 		}
 
 	}
+	
+	
+	
+	//funcion obtener nodo
+	
+	//const  Nodo *NOEXISTE= NULL; 
+	Nodo * obtenerNodo( int datodeNodo) {
+		Nodo *temp = new Nodo;
+		temp= primero;
+		if ( primero==NULL) {
+				cout<<"Lista esta vacia"<<endl;
+				//return NOEXISTE; 
+			}
+			else {
+					
+				while(temp) {
+					if (temp->datos== datodeNodo) {
+							return temp;
+						}
+						temp = temp->siguiente;
+					
+					}
+					return temp;
+				}
+				
+				
+		}
+		
 
 	~Lista (){
 		Nodo *primerNodo, *tempNodo;
@@ -93,6 +121,7 @@ int main (){
 	linkedlist->agregarNodo(7);
 	linkedlist->agregarNodo(9);
 	linkedlist->mostrasDatos();
+	cout<<linkedlist->obtenerNodo(9); 
 	delete linkedlist;
 
 
