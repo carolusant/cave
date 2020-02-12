@@ -1,11 +1,3 @@
-﻿/**********************************************************************************************************************
-*	
-* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310  
-* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310 
-* TAREA 02 || Carlos Gonzalez - 20192000980 || IS-310 
-*
-***********************************************************************************************************************/
-
 
 
 #include<iostream>
@@ -53,7 +45,7 @@ public:
 
 	}
 
-// TAREA 02  
+
 //agruegar funcion para mostrar nodos existentes
 	void mostrasDatos(){
 		Nodo *temp =new Nodo; // crear un nodo temporal para navegar por la lista 
@@ -83,24 +75,46 @@ public:
 		Nodo *temp = new Nodo;
 		temp= primero;
 		if ( primero==NULL) {
-				cout<<"Lista esta vacia"<<endl;
-				//return NOEXISTE; 
-			}
-			else {
+		  cout<<"Lista esta vacia"<<endl;
+		//return NOEXISTE; 
+		}
+		else {
 					
-				while(temp) {
-					if (temp->datos== datodeNodo) {
-							return temp;
-						}
-						temp = temp->siguiente;
-					
+		while(temp) {
+			if (temp->datos== datodeNodo) {
+				return temp;
 					}
+				temp = temp->siguiente;
+					
+				}
 					return temp;
 				}
 				
 				
 		}
 		
+       
+
+
+         //funcion buscar
+		
+		void encontrarNodo(int valor) {
+			Nodo *tempNodo = new Nodo;
+			if ( obtenerNodo(valor)==NULL){
+				cout<<"Nodo no existe o lista vacia"<<endl;
+			}
+			else{
+				tempNodo= obtenerNodo(valor); 
+				cout<<"Nodo encontrado"<<endl;
+				cout<<"Direccion : "<<tempNodo<<endl;
+				cout<<"Dato : " <<tempNodo->datos<<endl;
+		
+				
+			}
+			
+			
+		}
+
 
 	~Lista (){
 		Nodo *primerNodo, *tempNodo;
