@@ -9,14 +9,11 @@ public:
     Nodo *siguiente; // puntero del nodo o al nodo siguiente?? 
     Nodo *anterior; // puntero al nodo anterior
     int datos; // datos del nodo;
-	int masdatos; // pueden ir mas?? -- se tendrian que anadir mas parametros en la funcion agregarNodo o hacer funciones extras para ello 
-	float otrodato; /// ??? 
+
     Nodo (){ // constructor de Nodos 
         siguiente = NULL; 
         anterior = NULL;
         datos=0;
-		    masdatos=0;
-	     otrodato=0.0;
     }
 };
 
@@ -34,14 +31,14 @@ public:
 	//funcion para agregar nuevo nodo
 	void agregarNodo(int xdato){
 		Nodo *nuevoNodo = new Nodo;	// crear puntero para el nuevo nodo
-		//nuevoNodo = new Nodo;	// crear el nuevo nodo
 		nuevoNodo->datos= xdato;	// copiar el valor de xdato al area de datos del nodo recien creado 
+		
 		if(primero==NULL){			
 			primero=nuevoNodo;		// si la lista esta vacia, ingresar nuevo nodo al principio
 		}
 		else {
-			ultimo->siguiente= nuevoNodo; // si no agregar nuevoNodo al puntero del ultimo 
-      Nodo->anterior= ultimo; // linea agregada en clase 
+			ultimo->siguiente= nuevoNodo; // el ultimo deja de apuntar a NULL
+			nuevoNodo->anterior= ultimo; // 
 		}
 
 		ultimo= nuevoNodo;  // el ultimo siempre sera el nuevoNodo recien agregado , no importa cual sea ???
@@ -111,11 +108,50 @@ public:
 				cout<<"Nodo encontrado"<<endl;
 				cout<<"Direccion : "<<tempNodo<<endl;
 				cout<<"Dato : " <<tempNodo->datos<<endl;
-		
-				
+			
+			}		
+			
+		}
+
+	void borrarCabeza(){
+			Nodo *tempNodo = new Nodo;
+			tempNodo=primero;
+
+			if ( primero==NULL){ // confirmar que tenga algo antes de meter la pata 
+				cout<<"Lista esta vacia"<<endl;
+				system("Pause");
+				return;
 			}
 			
+				primero= primero->siguiente;
+
+				delete tempNodo;
+
+				if ( primero!=NULL){ // verificar si aun queda algo en lista
+					primero->anterior=NULL;
+				}
+				cout<<"El primer nodo ha sido eliminado con exito"<<endl;
 			
+			system("pause");
+		}
+
+
+		void borrarCola(){
+			Nodo *ultimoNodo = new Nodo;
+			ultimoNodo=ultimo;
+
+			if ( primero==NULL){ // confirmar que tenga algo antes de meter la pata 
+				cout<<"Lista esta vacia"<<endl;
+				system("Pause");
+				return; //salir 
+				}
+			
+			ultimo = ultimo->anterior;
+			ultimo->siguiente= NULL;
+			delete ultimoNodo; // ya es seguro borrar el nodo 
+			cout<<"El ultimo nodo ha sido eliminado con exito"<<endl;
+	
+			system("pause");	
 		}
 
 
@@ -137,8 +173,17 @@ int main (){
 	linkedlist->agregarNodo(5);
 	linkedlist->agregarNodo(7);
 	linkedlist->agregarNodo(9);
+	linkedlist->agregarNodo(96);
+	linkedlist->agregarNodo(98);
+	linkedlist->agregarNodo(90998);
 	linkedlist->mostrasDatos();
-	cout<<linkedlist->obtenerNodo(9); 
+	cout<<"-----------------------------------------"<<endl;
+	linkedlist->encontrarNodo(9);
+	linkedlist->borrarCabeza();
+	linkedlist->mostrasDatos();
+	cout<<"-----------------------------------------"<<endl;
+	 linkedlist->borrarCola();
+	 linkedlist->mostrasDatos();
 	delete linkedlist;
 
 
