@@ -42,7 +42,9 @@ public:
 		}
 
 		ultimo= nuevoNodo;  // el ultimo siempre sera el nuevoNodo recien agregado , no importa cual sea ???
-
+		
+		cout<<"Nodo agregado con exito"<<endl;
+		system("PAUSE");
 	}
 
 
@@ -55,14 +57,18 @@ public:
 		}
 		else{
 			int contador= 1;
+			cout<<"Contenido actual de la lista"<<endl;
+			 
 			while(temp){ // mientras el nodo temp sea distinto de cero/NULL
-				cout<<temp->datos<<endl; // muestra datos
+				cout<<"Datos del Nodo #"<<contador<<" : " <<temp->datos<<endl; // muestra datos
 				// para ver las direcciones y los datos 
 				//cout<<"|| Datos del Nodo #"<<contador<<" : " <<temp->datos<< " |-> Direccion del Nodo: " <<temp << " |-> Direccion del enlace: "<<temp->siguiente<<" ||"<<endl;
 				temp= temp->siguiente; // cambia temp al siguiente nodo y sigue el ciclo hasta lleguar a la cola
 				contador++;
 			}
 		}
+		
+		system("pause");
 
 	}
 	
@@ -111,9 +117,12 @@ public:
 			
 			}		
 			
+			system("pause");
+			
 		}
 		
 		
+		//Corregir bug, al haber mas 3 o menos 
 		void borrarNodo(int valor){
 			Nodo *nodoAnterior = new Nodo;
 			Nodo *nodoBuscado = new Nodo;
@@ -209,6 +218,8 @@ public:
 
 int main (){
 	Lista *linkedlist = new Lista;
+
+	/*
 	linkedlist->agregarNodo(5);
 	linkedlist->agregarNodo(7);
 	linkedlist->agregarNodo(9);
@@ -223,6 +234,81 @@ int main (){
 	cout<<"-----------------------------------------"<<endl;
 	 linkedlist->borrarCola();
 	 linkedlist->mostrasDatos();
+	 */
+	 
+	 
+	 
+	 int op, addNode=0, findNode=0, deleteNode=0;
+
+	do {
+
+		system("cls"); 
+		cout<<"-----------------------------------------"<<endl;
+		cout<<"0 - Agregar nodo"<<endl;
+		cout<<"1 - Mostrar lista"<<endl;
+		cout<<"2 - Mostrar lista al reves "<<endl;
+		cout<<"3 - Buscar nodo"<<endl;
+		cout<<"4 - Eliminar primer nodo"<<endl;
+		cout<<"5 - Eliminar ultimo nodo"<<endl;
+		cout<<"6 - Eliminar cualquier otro nodo"<<endl;
+		cout<<"7 - Salir"<<endl;
+		cout<<"-----------------------------------------"<<endl;
+
+		cout<<"Seleccione la accion que desea realizar:"<<endl;
+		cin>>op;
+
+		switch(op){
+		case 0:
+			cout<<"Ingrese el valor que desea agregar"<<endl;
+			cin>>addNode;
+			linkedlist->agregarNodo(addNode);
+			break;
+		
+		case 1:
+			system("cls"); 
+			//cout<<"Lista actual"<<endl;
+			linkedlist->mostrasDatos(); 
+			break;
+		
+		case 2:
+			system("cls"); 
+			cout<<"Hacer metodo para mostrar al reves"<<endl;
+		
+			break;
+
+		case 3:
+			cout<<"Ingrese el dato del nodo que desea encontrar"<<endl;
+			cin>>findNode;
+			linkedlist->encontrarNodo(findNode);
+			break;
+
+		case 4:
+			linkedlist->borrarCabeza();
+			break;
+
+		case 5:
+			linkedlist->borrarCola(); 
+			break;
+
+		case 6:
+			cout<<"Ingrese el dato del nodo que desea eliminar"<<endl;
+			cin>>deleteNode;
+			linkedlist->borrarNodo(deleteNode);
+			break;
+		
+		case 7:	
+			break;
+
+		default:
+			cout<<"Opcion invalida, intente de nuevo"<<endl;
+			system("pause");
+			break;
+		}
+
+	}while(op!=7);
+	 
+	 
+	 
 	delete linkedlist;
 
 
