@@ -112,6 +112,45 @@ public:
 			}		
 			
 		}
+		
+		
+		void borrarNodo(int valor){
+			Nodo *nodoAnterior = new Nodo;
+			Nodo *nodoBuscado = new Nodo;
+			Nodo *nodoSiguiente = new Nodo;
+
+			if ( obtenerNodo(valor)==NULL){ // antes de empezar, verificar si el nodo existe 
+				cout<<"Nodo no existe"<<endl;
+				return;
+			}
+			
+			nodoAnterior= primero; 
+			nodoBuscado= primero->siguiente;
+			nodoSiguiente= primero->siguiente->siguiente;
+			
+				
+			while(nodoBuscado->datos != valor){
+				nodoAnterior=nodoAnterior->siguiente;
+				nodoBuscado= nodoBuscado->siguiente;
+				nodoSiguiente= nodoSiguiente->siguiente;
+			}
+
+
+			nodoAnterior->siguiente= nodoSiguiente;
+			nodoSiguiente->anterior= nodoAnterior; 
+			
+			
+			
+			delete nodoBuscado; 
+				
+			cout<<"Nodo eliminado existosamente"<<endl;
+			system("pause");
+		}
+
+
+		
+		
+		
 
 	void borrarCabeza(){
 			Nodo *tempNodo = new Nodo;
