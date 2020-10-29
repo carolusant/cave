@@ -1,0 +1,115 @@
+.page-wrapper{
+  max-width: 100%;
+  border: 2px solid #002E5D;
+  box-shadow: 5px 5px 5px 5px rgba(0,0.3,0.6);
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: #002E5D;
+}
+
+  nav{
+      width: 100%; height:70px;
+      background: #002E5D;
+
+  }
+
+  footer{
+      width: 100%; height:30px;
+      background: #002E5D;
+
+  }
+
+  .pie p{
+    color: white;
+    text-align: center;
+    font-family: 'Abel';
+    font-size: 12px;
+    margin-left: 15%;
+  }
+
+  html{
+    height: 100%;
+
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    font-family: 'Fira Sans';
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+
+  .logo img{
+    position:absolute;
+    margin-top:3px;
+    margin-left: 25px;
+  }
+
+  .social {
+    float: right;
+  }
+
+
+
+  .facebook-icon,
+  .instagram-icon,
+  .youtube-icon
+  {
+  	width: 15px;
+  	height: 15px;
+  	opacity: .7;
+
+  }
+
+
+.facebook-icon:hover,
+.instagram-icon:hover,
+.youtube-icon:hover
+ {
+	opacity: 1.0;
+}
+
+/*
+    Estos dos ultimos divs son los unicos que pueden ajustar dependiendo al contenido que les
+    toque agregar, evitar tocar cualquier cosa de la arriba ya que eso crearia incosistencia
+    en nuesto proyecto. Supongamos que lo de arriba es una plantilla
+
+    Obviamente pueden agregar la cantidad divs que quieran
+
+ */
+
+  .contenido{
+      width: 100%; min-height:999px;
+      background: #C3E0E5;
+      padding: 0%;
+  }
+
+  .ejemplo{
+    position: absolute;
+    margin-top: 290px;
+    margin-right: 40px;
+    margin-left: 40px;
+    font-size: 18px;
+    line-height: 107%;
+    text-align: justify;
+    font-family: 'Fira Sans';
+
+  }

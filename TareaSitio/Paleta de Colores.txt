@@ -1,0 +1,12 @@
+Baby Blue
+#C3E0E5
+
+GinoFerreti Blue
+#002E5D
+
+Blue Gray
+#5885AF
+
+Midnight Blue
+#41729F
+
